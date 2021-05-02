@@ -6,5 +6,12 @@ public class DailyWeatherReport {
     LinkedList<Double> listOfTemperature;
     LinkedList<Double> listOfRainfall;
 
+    DailyWeatherReport(GregorianCalendar date,
+            LinkedList<Double> listOfTemperature,
+            LinkedList<Double> listOfRainfall) {
 
+        this.date = date;
+        this.listOfTemperature = listOfTemperature;
+        this.listOfRainfall = listOfRainfall;
+    }
 }
