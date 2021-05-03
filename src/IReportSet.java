@@ -3,7 +3,7 @@ import java.util.LinkedList;
 
 // i like big butts and I cannot lie
 public interface IReportSet {
-    public double getAverageTempForMonth(int month, int year);
-    public double getTotalRainfallForMonth(int month, int year);
-    public IReportSet setAddDailyReport(DailyWeatherReport aNewDailyWeatherReport);
+     double getAverageTempForMonth(int month, int year);
+     double getTotalRainfallForMonth(int month, int year);
+     IReportSet setAddDailyReport(DailyWeatherReport aNewDailyWeatherReport);
 }

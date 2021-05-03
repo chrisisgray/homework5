@@ -1,13 +1,23 @@
 public class Reading {
-    Time aTime;
-    double temperature;
-    double rainfall;
+    private Time time;
+    private double temperature;
+    private double rainfall;
 
-    Reading(Time aTime,
+    Reading(Time time,
             double temperature,
             double rainfall) {
-        this.aTime = aTime;
+        this.time = time;
         this.temperature = temperature;
         this.rainfall = rainfall;
+
+
+    }
+
+    public double getTemp() {
+        return this.temperature;
+    }
+
+    public double getRainfall() {
+        return this.rainfall;
     }
 }

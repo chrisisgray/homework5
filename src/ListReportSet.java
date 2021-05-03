@@ -2,13 +2,13 @@ import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
 public class ListReportSet implements IReportSet {
-    LinkedList<DailyWeatherReport> reports;
+    private LinkedList<DailyWeatherReport> reports;
 
-    ListReportSet(LinkedList<DailyWeatherReport> reports) {
+    public ListReportSet(LinkedList<DailyWeatherReport> reports) {
         this.reports = reports;
     }
 
-    ListReportSet() {
+    public ListReportSet() {
         this.reports = new LinkedList<DailyWeatherReport>();
     }
 

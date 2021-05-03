@@ -25,15 +25,18 @@ public class WeatherMonitor {
     // creates and stores a daily report for that given date
     // THE WEATERMONITOR'S DAILY REPORTS SHOULD BE STORED IN A LINKED LIST
     // ASSUME: a daily report for the provided date does not already exist
+
+    // this data actually needs to move into the Reading class
     public IReportSet addDailyReport(GregorianCalendar date,
                                      LinkedList<Reading> readings) {
 
         //        I almost think that this method should return void.
         LinkedList<Double> temps = new LinkedList<>();
         LinkedList<Double> rainfalls = new LinkedList<>();
+
         for(Reading aReading: readings) {
-            temps.add(aReading.temperature);
-            rainfalls.add(aReading.rainfall);
+            temps.add(aReading.getTemp());
+            rainfalls.add(aReading.getRainfall());
         }
 
         DailyWeatherReport aNewDailyWeatherReport = new DailyWeatherReport(date, temps, rainfalls);

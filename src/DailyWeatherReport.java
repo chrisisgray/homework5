@@ -2,12 +2,12 @@ import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
 public class DailyWeatherReport {
-    GregorianCalendar date;
-    LinkedList<Double> listOfTemperature;
-    LinkedList<Double> listOfRainfall;
+    private GregorianCalendar date;
+    private LinkedList<Double> listOfTemperature;
+    private LinkedList<Double> listOfRainfall;
 
 
-    DailyWeatherReport(GregorianCalendar date,
+    public DailyWeatherReport(GregorianCalendar date,
                        LinkedList<Double> listOfTemperature,
                        LinkedList<Double> listOfRainfall) {
 
@@ -16,7 +16,7 @@ public class DailyWeatherReport {
         this.listOfRainfall = listOfRainfall;
     }
 
-    double getSumOfTemp(int month, int year) {
+    public double getSumOfTemp(int month, int year) {
         double sumOfTemp = 0;
 
         if((this.date.get(GregorianCalendar.MONTH)) == month
@@ -28,7 +28,7 @@ public class DailyWeatherReport {
         return sumOfTemp;
     }
 
-    double getCountOfTemp(int month, int year) {
+    public double getCountOfTemp(int month, int year) {
         double counter = 0;
         if((this.date.get(GregorianCalendar.MONTH)) == month
                 && (this.date.get(GregorianCalendar.YEAR) == year)) {
