@@ -1,6 +1,9 @@
 import java.util.LinkedList;
 import java.util.GregorianCalendar;
 
+/**
+ * a program that reports weather trends.
+ */
 public class WeatherMonitor {
     private IReportSet reports;
 
@@ -9,24 +12,35 @@ public class WeatherMonitor {
     }
 
 
-    //    consumes a month[0,11] where 0 is January and 11 is December and a year
-//    produces the average temperature for all days in a specified month
+    /**
+     * average daily temperature during a particular month and year.
+     * @param month a month[0,11] where 0 is January and 11 is December.
+     * @param year a year.
+     * @return the average temperature for all days in a specified month in a given year.
+     */
     public double averageTempForMonth(int month, int year) {
         return this.reports.getAverageTempForMonth(month, year);
     }
 
-    //    consumes a month[0,11] where 0 is January and 11 is December and a year
-    //    produces the total rainfall for all days in a specified month
+
+    /**
+     * total rainfall during a particular month and year.
+     * @param month a month[0,11] where 0 is January and 11 is December and a year.
+     * @param year a year.
+     * @return the total rainfall for all days in a specified month in a given year.
+     */
     public double totalRainfallForMonth(int month, int year) {
         return this.reports.getTotalRainfallForMonth(month, year);
     }
 
-    // consumes a date and a list of readings (for that date) and
-    // creates and stores a daily report for that given date
-    // THE WEATERMONITOR'S DAILY REPORTS SHOULD BE STORED IN A LINKED LIST
-    // ASSUME: a daily report for the provided date does not already exist
 
-    // this data actually needs to move into the Reading class
+    /**
+     * Adds a DailyWeatherReport to the data structure storing DailyWeatherReports.
+     * ASSUME: a daily report for the provided date does not already exist.
+     * @param date an instance of the GregorianCalender class representing a date.
+     * @param readings  a list of readings (for that date).
+     * @return creates and stores a daily report for that given date.
+     */
     public IReportSet addDailyReport(GregorianCalendar date,
                                      LinkedList<Reading> readings) {
 
@@ -42,10 +56,5 @@ public class WeatherMonitor {
         DailyWeatherReport aNewDailyWeatherReport = new DailyWeatherReport(date, temps, rainfalls);
         return this.reports.setAddDailyReport(aNewDailyWeatherReport);
     }
-
-    /* This is what a date looks like
-    *  GregorianCalendar date = new GregorianCalendar(2016, 11, 17);
-    int month = date.get(GregorianCalendar.MONTH);  // value of month will be 11
-    * */
 
 }
